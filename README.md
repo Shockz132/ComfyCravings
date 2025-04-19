@@ -1,4 +1,4 @@
-# InsertAppName
+# ComfyCravings
 
 NUS HumanITy Challenge 2025 Team Roje
 
