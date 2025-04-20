@@ -42,6 +42,17 @@ const _layout = () => {
                         height: '100%',
                         justifyContent: 'center',
                         alignItems: 'center',
+                    },
+                    tabBarStyle: {
+                        backgroundColor:'#0f0D23',
+                        borderRadius: 50,
+                        marginHorizontal: 20,
+                        marginBottom: 36,
+                        height: 52,
+                        position: 'absolute',
+                        overflow: 'hidden',
+                        borderWidth: 1,
+                        borderColor: '#0f0D23'
                     }
                 }}  
             >
@@ -67,6 +78,32 @@ const _layout = () => {
                             <TabIcon 
                                 focused={focused}
                                 icon={AlertTriangleIcon}    
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='login'
+                    options={{
+                        title: 'Login',
+                        headerShown: false,
+                        tabBarIcon: ({ focused }) => (
+                            <TabIcon
+                                focused={focused}
+                                icon={AlertTriangleIcon}
+                            />
+                        )
+                    }}
+                />
+                <Tabs.Screen
+                    name='signup'
+                    options={{
+                        title: 'Sign Up',
+                        headerShown: false,
+                        tabBarIcon: ({ focused }) => (
+                            <TabIcon
+                                focused={focused}
+                                icon={AlertTriangleIcon}
                             />
                         )
                     }}
