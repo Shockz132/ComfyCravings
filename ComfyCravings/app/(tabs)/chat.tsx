@@ -23,7 +23,9 @@ const AIChat = () => {
   }, []);
 
   const testAIReply = () => {
-    setMessages((prevMessages) => [...prevMessages, { user: 'AI', content: 'This is a test reply.' }]);
+    setTimeout(() => {
+      setMessages((prevMessages) => [...prevMessages, { user: 'Joy', content: "I'm sorry to hear that you're experiencing these challenges. Since you've improved fatigue through increased water intake and reduced caffeine, you're on the right track. Depression and persistent sadness can sometimes be linked to nutritional factors. Have you noticed any changes since making those adjustments to your water and caffeine intake? Perhaps incorporating foods rich in omega-3 fatty acids and complex carbohydrates could offer some relief. How have you been feeling in general, and are there any specific dietary changes you've considered to help with these symptoms?" }]);
+    }, 3000);
   }
 
   const handleSend = useCallback(() => {
