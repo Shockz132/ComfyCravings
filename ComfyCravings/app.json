@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "insert_app_name",
-    "slug": "insert_app_name",
+    "name": "ComfyCravings",
+    "slug": "ComfyCravings",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "insert_app_name",
+    "scheme": "ComfyCravings",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

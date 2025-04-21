@@ -1,26 +1,15 @@
 import { View, Text, Image, ImageBackground } from 'react-native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import { themeColor } from 'react-native-rapi-ui';
 import FeatherIcons from 'react-native-vector-icons/Feather'
 import React from 'react'
 import { Tabs } from 'expo-router'
+import { ThemeProvider } from 'react-native-rapi-ui'
 
-const TabIcon = ({ focused, icon } : any) => {
-    if (focused) {
-        return (
-            <>
-                <ImageBackground className="min-w-min bg-blue-300 rounded-full">
-                    <View className="min-w-12 min-h-12 items-center flex-1 justify-center">
-                        { icon }
-                    </View>
-                </ImageBackground>
-            </>
-        )
-    }
-
+const TabIcon = ({ icon } : any) => {
     return (
         <>
-            <ImageBackground className="min-w-min">
-                <View className="min-w-12 min-h-12 items-center flex-1 justify-center">
+            <ImageBackground>
+                <View>
                     { icon }
                 </View>
             </ImageBackground>
@@ -29,11 +18,9 @@ const TabIcon = ({ focused, icon } : any) => {
 }
 
 const _layout = () => {
-    const HomeIcon = <FeatherIcons name="home" size={30} color="#000000" />;
-    const AlertTriangleIcon = <FeatherIcons name="alert-triangle" size={30} color="#000000" />;
 
     return (
-        <SafeAreaProvider>
+        <ThemeProvider theme='light'>
             <Tabs
                 screenOptions={{
                     tabBarShowLabel: true,
@@ -42,17 +29,6 @@ const _layout = () => {
                         height: '100%',
                         justifyContent: 'center',
                         alignItems: 'center',
-                    },
-                    tabBarStyle: {
-                        backgroundColor:'#0f0D23',
-                        borderRadius: 50,
-                        marginHorizontal: 20,
-                        marginBottom: 36,
-                        height: 52,
-                        position: 'absolute',
-                        overflow: 'hidden',
-                        borderWidth: 1,
-                        borderColor: '#0f0D23'
                     }
                 }}  
             >
@@ -61,55 +37,29 @@ const _layout = () => {
                     options={{
                         title: 'Home',
                         headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon 
-                                focused={focused}
-                                icon={HomeIcon}    
+                        tabBarIcon: ({ focused }) => {
+                            const iconColor = focused ? themeColor.primary400 : themeColor.black400;
+                            return <TabIcon 
+                                icon={<FeatherIcons name="home" size={30} color={iconColor} />}
                             />
-                        )
+                        }
                     }}
                 />
                 <Tabs.Screen 
-                    name='test'
+                    name='chat'
                     options={{
-                        title: 'test route',
+                        title: 'Chat',
                         headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon 
-                                focused={focused}
-                                icon={AlertTriangleIcon}    
+                        tabBarIcon: ({ focused }) => {
+                            const iconColor = focused ? themeColor.primary400 : themeColor.black400;
+                            return <TabIcon 
+                                    icon={<FeatherIcons name="message-circle" size={30} color={iconColor} />}
                             />
-                        )
-                    }}
-                />
-                <Tabs.Screen
-                    name='login'
-                    options={{
-                        title: 'Login',
-                        headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon
-                                focused={focused}
-                                icon={AlertTriangleIcon}
-                            />
-                        )
-                    }}
-                />
-                <Tabs.Screen
-                    name='signup'
-                    options={{
-                        title: 'Sign Up',
-                        headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon
-                                focused={focused}
-                                icon={AlertTriangleIcon}
-                            />
-                        )
+                        }
                     }}
                 />
             </Tabs>
-        </SafeAreaProvider>
+        </ThemeProvider>
   )
 }
 
