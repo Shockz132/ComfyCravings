@@ -23,10 +23,11 @@ messages = [
 ]
 
 completion = client.chat.completions.create(
-    model="Qwen/QwQ-32B", 
+    model="microsoft/Phi-3-mini-4k-instruct", 
 	messages=messages, 
 	max_tokens=550, # affects the duration of the response too i think and the depth.
 )
+
 
 # just note that it takes a while for the model to respond
 print(completion.choices[0].message.content)
