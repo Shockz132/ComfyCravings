@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model cc_food {
+  food_id          Int                @id @default(autoincrement())
+  food_name        String             @db.VarChar(255)
+  food_description String?
+  cc_food_nutrient cc_food_nutrient[]
+}
+
+model cc_food_nutrient {
+  food_id     Int
+  nutrient_id Int
+  cc_food     cc_food     @relation(fields: [food_id], references: [food_id], onDelete: Cascade, onUpdate: NoAction)
+  cc_nutrient cc_nutrient @relation(fields: [nutrient_id], references: [nutrient_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([food_id, nutrient_id])
+}
+
+model cc_illness {
+  illness_id          Int               @id @default(autoincrement())
+  illness_name        String            @db.VarChar(100)
+  illness_description String?
+  cc_user_illness     cc_user_illness[]
+}
+
+model cc_nutrient {
+  nutrient_id          Int                @id @default(autoincrement())
+  nutrient_name        String             @db.VarChar(100)
+  nutrient_description String?
+  cc_food_nutrient     cc_food_nutrient[]
+}
+
+model cc_user {
+  user_id         Int               @id @default(autoincrement())
+  email           String            @db.VarChar(320)
+  password        String            @db.VarChar(128)
+  cc_user_illness cc_user_illness[]
+}
+
+model cc_user_illness {
+  user_id    Int
+  illness_id Int
+  cc_illness cc_illness @relation(fields: [illness_id], references: [illness_id], onDelete: Cascade, onUpdate: NoAction)
+  cc_user    cc_user    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([user_id, illness_id])
+}
