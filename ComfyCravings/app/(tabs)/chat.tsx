@@ -82,7 +82,7 @@ const AIChat = () => {
                   size="md"
                   status="primary"
                   onPress={handleSend}
-                  className="rounded-md"/>
+                  className="rounded-md ml-2"/>
               </Text>
               
             </Section>
