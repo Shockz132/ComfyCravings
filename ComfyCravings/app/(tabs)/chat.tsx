@@ -56,7 +56,7 @@ const AIChat = () => {
   return (
     <Layout className="flex-1">
       <Section className="flex-1">
-        <Text size="h3" fontWeight="bold" className="mb-4 mt-2 text-center">Chat</Text>
+        <Text size="h3" fontWeight="bold" className="mb-4 mt-2 text-center">Chat with Joy AI!</Text>
         <GiftedChat
           messages={formatMessagesForGiftedChat()}
           onSend={(newMessages) => {
