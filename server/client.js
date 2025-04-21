@@ -1,4 +1,2 @@
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
-module.exports = prisma
-
+// import { PrismaClient } from './generated/prisma/client'
+// export const prisma = new PrismaClient()
