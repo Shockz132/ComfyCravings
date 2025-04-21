@@ -4,7 +4,7 @@ const client = new InferenceClient("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");
 
 const chatCompletion = await client.chatCompletion({
     provider: "hf-inference",
-    model: "Qwen/QwQ-32B",
+    model: "microsoft/Phi-3-mini-4k-instruct",
     messages: [
         {
             "role": "system",  
