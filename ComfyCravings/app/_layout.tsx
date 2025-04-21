@@ -1,9 +1,10 @@
-import { Stack } from "expo-router";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { ThemeProvider } from "react-native-rapi-ui"
+import { Stack } from "expo-router"
+
 
 export default function RootLayout() {
   return (
-    <SafeAreaProvider>
+    <ThemeProvider theme="dark">
       <Stack >
         <Stack.Screen
           name="(tabs)"
@@ -18,6 +19,6 @@ export default function RootLayout() {
           }}
         />
       </Stack>
-    </SafeAreaProvider>
+    </ThemeProvider>
   ) 
 }

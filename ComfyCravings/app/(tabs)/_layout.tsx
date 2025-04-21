@@ -1,15 +1,17 @@
 import { View, Text, Image, ImageBackground } from 'react-native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import { themeColor } from 'react-native-rapi-ui';
 import FeatherIcons from 'react-native-vector-icons/Feather'
 import React from 'react'
 import { Tabs } from 'expo-router'
+import { ThemeProvider } from 'react-native-rapi-ui'
 
 const TabIcon = ({ focused, icon } : any) => {
+
     if (focused) {
         return (
             <>
-                <ImageBackground className="min-w-min bg-blue-300 rounded-full">
-                    <View className="min-w-12 min-h-12 items-center flex-1 justify-center">
+                <ImageBackground>
+                    <View>
                         { icon }
                     </View>
                 </ImageBackground>
@@ -19,8 +21,8 @@ const TabIcon = ({ focused, icon } : any) => {
 
     return (
         <>
-            <ImageBackground className="min-w-min">
-                <View className="min-w-12 min-h-12 items-center flex-1 justify-center">
+            <ImageBackground>
+                <View>
                     { icon }
                 </View>
             </ImageBackground>
@@ -29,11 +31,11 @@ const TabIcon = ({ focused, icon } : any) => {
 }
 
 const _layout = () => {
-    const HomeIcon = <FeatherIcons name="home" size={30} color="#000000" />;
-    const AlertTriangleIcon = <FeatherIcons name="alert-triangle" size={30} color="#000000" />;
+    const HomeIcon = <FeatherIcons name="home" size={30} color={themeColor.black400} />;
+    const AlertTriangleIcon = <FeatherIcons name="alert-triangle" size={30} color={themeColor.black400} />;
 
     return (
-        <SafeAreaProvider>
+        <ThemeProvider theme='dark'>
             <Tabs
                 screenOptions={{
                     tabBarShowLabel: true,
@@ -50,12 +52,13 @@ const _layout = () => {
                     options={{
                         title: 'Home',
                         headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon 
+                        tabBarIcon: ({ focused }) => {
+                            const iconColor = focused ? themeColor.primary400 : themeColor.black400;
+                            return <TabIcon 
                                 focused={focused}
-                                icon={HomeIcon}    
+                                icon={<FeatherIcons name="home" size={30} color={iconColor} />}
                             />
-                        )
+                        }
                     }}
                 />
                 <Tabs.Screen 
@@ -63,16 +66,17 @@ const _layout = () => {
                     options={{
                         title: 'test route',
                         headerShown: false,
-                        tabBarIcon: ({ focused }) => (
-                            <TabIcon 
-                                focused={focused}
-                                icon={AlertTriangleIcon}    
+                        tabBarIcon: ({ focused }) => {
+                            const iconColor = focused ? themeColor.primary400 : themeColor.black400;
+                            return <TabIcon 
+                                    focused={focused}
+                                    icon={<FeatherIcons name="alert-triangle" size={30} color={iconColor} />}
                             />
-                        )
+                        }
                     }}
                 />
             </Tabs>
-        </SafeAreaProvider>
+        </ThemeProvider>
   )
 }
 
