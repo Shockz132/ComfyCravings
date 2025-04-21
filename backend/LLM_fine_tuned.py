@@ -32,6 +32,7 @@ messages = [
              Recommended Nutritional Change: [Change for Symptom 1]
            - Symptom: [Symptom 2]
              Recommended Nutritional Change: [Change for Symptom 2]
+           Ensure that each symptom is listed only once with its corresponding recommended nutritional change. The user may mention any number of symptoms.
         3. Provide a conversational response in the following format:
            ### Conversational Response:
            [Empathetic and conversational text to check in with the user about their previous symptoms and solutions, and ask if they have noticed any improvements or additional symptoms.]"""
