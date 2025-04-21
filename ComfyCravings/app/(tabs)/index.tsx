@@ -1,17 +1,27 @@
-import { Text, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Link } from 'expo-router'
+import { Layout, Section, Text, TopNav, Avatar } from "react-native-rapi-ui";
+import FeatherIcons from 'react-native-vector-icons/Feather'
+import { themeColor } from "react-native-rapi-ui";
 import '../globals.css'
 
 export default function Index() {
 
   return (
-    <SafeAreaView className="flex-1 justify-center items-center">
-      <Text>
-        <Text className="text-5xl text-primary">test header</Text>
-        <Text className="text-5xl text-red-500">!</Text>
-      </Text>
-      <Link href='/testParams/yourmom' className="underline text-blue-500">test link!</Link>
-    </SafeAreaView>
+    <Layout>
+      <Section className="p-5 flex-1 justify-start">
+        <Text >
+          <Avatar 
+            source={{ uri: 'https://cdn-icons-png.flaticon.com/512/1144/1144760.png' }}
+            size="md"
+            shape="round"
+          />
+        </Text>
+        <Section className="p-5 items-center ">
+          <Text size='h1' className="mb-3">Welcome back!</Text>
+          <Text size='h2'>Current Nutritional Plan:</Text>
+          <Text>Insert the LLM proposed diet plan</Text>
+        </Section>
+      </Section>
+      
+    </Layout>
   );
 }
