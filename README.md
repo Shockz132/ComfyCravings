@@ -5,11 +5,11 @@ NUS HumanITy Challenge 2025 Team Roje
 
 **Install Dependencies**
 Run the following in the terminal:
-1. <code>cd my-app</code>
+1. <code>cd ComfyCravings</code>
 2. <code>npm install</code>
 
 **Run the App**
-1. <code>cd my-app</code> 
+1. <code>cd ComfyCravings</code> 
 2. <code>npx expo start</code>
 3. Click the localhost URL (should be port 8081) to view the app as a website.
 
