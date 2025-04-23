@@ -29,7 +29,7 @@ Refer to the [Expo docs](https://docs.expo.dev/workflow/android-studio-emulator/
 <a href="https://github.com/Shockz132">
 <img src="https://avatars.githubusercontent.com/u/77573058?v=4" width="100px;" alt="Shockz132"/><br>
 <sub>
-<b>Jethrol</b>
+<b>Jethro</b>
 </sub>
 </a>
 </td>
