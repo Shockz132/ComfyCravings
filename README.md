@@ -1,5 +1,8 @@
 # ComfyCravings
-NUS HumanITy Challenge 2025 Team Roje
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=15369236)
+
+![<h1 align="center" st![Authinc-ezgif com-crop](https://github.com/user-attachments/assets/dbddb0dc-7ebe-45cf-b389-81364898201c)
+yle="font-weight: bold;">NUS HumanITy Challenge 2025 Team Roje 📃</h1>](https://github.com/user-attachments/assets/4bdfb4ec-6660-4350-b2f1-26ce61fcf9ed)
 
 ## How to Run
 
